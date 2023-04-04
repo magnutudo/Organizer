@@ -1,0 +1,20 @@
+section {
+  border: 1px solid black;
+  padding: 1rem;
+  header{
+    margin-bottom: 1rem;
+  }
+}
+.btn2 {
+  max-width: 200px;
+  margin: 0 auto;
+  height: 40px;
+}
+.task{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 1rem;
+  border: 1px;
+  margin-bottom: .5rem;
+}
