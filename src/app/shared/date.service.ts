@@ -9,6 +9,12 @@ export class DateService{
   changeMonth(num:number){
     const value = this.date.value.add(num, "month")
     this.date.next(value)
-
+  }
+  changeDate(date:moment.Moment){
+    const value = this.date.value.set({
+      date:date.date(),
+      month:date.month()
+    })
+    this.date.next(value)
   }
 }

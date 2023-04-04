@@ -4,7 +4,7 @@
     <th>Sun</th>
     <th>Mon</th>
     <th>Tue</th>
-    <th>Wen</th>
+    <th>Wed</th>
     <th>Thu</th>
     <th>Fri</th>
     <th>Sat</th>
@@ -12,10 +12,14 @@
   </thead>
   <tbody>
   <tr *ngFor="let week of calendar">
-    <td
-      *ngFor="let day of week.days"
+    <td (click)="select(day.value)"
+      *ngFor="let day of week.days "
+      [class.disabled]="day.disabled"
     >
-      <span>{{day.value | moment: "ddd DD"}}</span>
+      <span
+        [class.selected]="day.selected"
+        [class.active] = "day.active"
+      >{{day.value | moment: "ddd DD"}}</span>
     </td>
   </tr>
   </tbody>
