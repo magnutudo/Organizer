@@ -5,15 +5,18 @@
   </header>
 
   <main>
-    <ul>
-      <li class="task">
+    <ul *ngIf="tasks.length;let loading">
+      <li class="task" *ngFor="let task of tasks;let indx = index">
         <span>
-          <strong>1</strong>
-          daddada
+          <strong>{{indx+1}}</strong>
+          {{task.title}}
         </span>
-        <button class="btn btn-primary "> Remove</button>
+        <button class="btn btn-primary " (click)="remove(task)"> Remove</button>
       </li>
     </ul>
+    <ng-template #loading>
+      <p class="text-center">No posts</p>
+    </ng-template>
   </main>
   <footer>
     <form [formGroup]="form"  (ngSubmit)="submit()">
