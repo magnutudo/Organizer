@@ -35,7 +35,8 @@ export class OrganizerComponent implements OnInit{
     this.taskService.create(task).subscribe(task =>{
       this.tasks.push(task)
       this.form.reset()
-    },error => console.log(error)
+    },
+        error => console.log(error)
     )
   }
 
